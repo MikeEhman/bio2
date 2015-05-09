@@ -3,31 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/NHGK/bio2/src/bio2/dataset_10332_8.txt</file>
-            <file>file:/C:/NHGK/bio2/src/bio2/TrieConstruction.txt</file>
-            <file>file:/C:/NHGK/bio2/src/bio2/MatchProcess.java</file>
-            <file>file:/C:/NHGK/bio2/src/bio2/BWMatching.txt</file>
-            <file>file:/C:/NHGK/bio2/src/bio2/PartialSuffixMap.java</file>
-            <file>file:/C:/NHGK/bio2/src/bio2/Cluster.java</file>
-            <file>file:/C:/NHGK/bio2/src/bio2/SuffixArray.java</file>
-            <file>file:/C:/NHGK/bio2/src/bio2/Trie.java</file>
-            <file>file:/C:/NHGK/bio2/src/bio2/MultiplePatternMatching.txt</file>
-            <file>file:/C:/NHGK/bio2/src/bio2/Parser.java</file>
-            <file>file:/C:/NHGK/bio2/src/bio2/BWLetter.java</file>
-            <file>file:/C:/NHGK/bio2/src/bio2/Graph.java</file>
-            <file>file:/C:/NHGK/bio2/src/bio2/SARS.java</file>
-            <file>file:/C:/NHGK/bio2/src/bio2/CandidatePattern.java</file>
-            <file>file:/C:/NHGK/bio2/src/bio2/dataset_310_2.txt</file>
-            <file>file:/C:/NHGK/bio2/src/bio2/Node.java</file>
-            <file>file:/C:/NHGK/bio2/src/bio2/SuffixTree.java</file>
-            <file>file:/C:/NHGK/bio2/src/bio2/BetterBWMatching.txt</file>
-            <file>file:/C:/NHGK/bio2/src/bio2/output.txt</file>
-            <file>file:/C:/NHGK/bio2/src/bio2/PhyloTree.java</file>
-            <file>file:/C:/NHGK/bio2/src/bio2/CombinationGenerator.java</file>
-            <file>file:/C:/NHGK/bio2/src/bio2/Bio2.java</file>
-            <file>file:/C:/NHGK/bio2/src/bio2/Edge.java</file>
-            <file>file:/C:/NHGK/bio2/src/bio2/sample.txt</file>
-            <file>file:/C:/NHGK/bio2/src/bio2/test.txt</file>
+            <file>file:/home/nam/Stuff/bio2/src/Yeast.java</file>
         </group>
     </open-files>
 </project-private>

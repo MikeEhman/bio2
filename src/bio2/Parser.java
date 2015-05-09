@@ -53,4 +53,18 @@ public class Parser {
         return mat;
     } 
     
+    public static ArrayList<float[]> ParseFloatDataPoints (ArrayList<String> list, int n) throws IOException {
+        String[] lineArr;
+        ArrayList<float[]> Data = new ArrayList<>();
+        for (String line : list) {
+            lineArr = line.split(" ");
+            float[] p = new float[n];
+            for (int i=0; i<n; i++) {
+                float num = Float.parseFloat(lineArr[i]);
+                p[i] = num;
+            }
+            Data.add(p);
+        }
+        return Data;
+    }
 }
