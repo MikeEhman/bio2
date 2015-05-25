@@ -32,6 +32,9 @@ public class Node implements Comparable<Node>, Serializable {
         public String character;
         public HashMap<String,Integer> s = new HashMap<>();
         
+        // Cluster
+        public DataCluster cluster;
+        
         public Node() {
             this.index = -1;
             this.label = "";
