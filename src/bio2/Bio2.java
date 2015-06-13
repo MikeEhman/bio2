@@ -844,8 +844,7 @@ public class Bio2 {
     
     public static void main(String[] args) throws IOException, CloneNotSupportedException {
         
-        Yeast.quiz1();
-        
+        HIV.problem6();
     }
     
 }

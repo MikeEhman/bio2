@@ -419,4 +419,64 @@ public class Yeast {
         System.out.println(c[0] + " " + c[1] + " " + c[2]);
         int i = 1;
     }
+    
+    public static void quiz2() throws IOException {
+        ArrayList<String> list = Parser.ParseTextIntoList("src/bio2/test.txt");
+        HashMap<Integer,HashMap<Integer,Float>> FDMat = Parser.IntoFDMat(list);
+        
+        float[][] datArr = {{2,8},{2,5},{6,9},{7,5},{5,2}};
+        float[][] centArr = {{3,5},{5,4}};  
+        ArrayList<float[]> Centers = new ArrayList<float[]>(Arrays.asList(centArr));
+        ArrayList<float[]> Data = new ArrayList<float[]>(Arrays.asList(datArr));
+        
+        int i = 0;
+        int j = 1;
+        float beta = 1f;
+        
+        float newNum = 0;
+        newNum += Math.pow(Math.E,-beta*distanceBetween(Data.get(j),Centers.get(i)));
+        float den = 0;
+        for (float[] c : Centers) {
+            den += Math.pow(Math.E,-beta*distanceBetween(Data.get(j),c));
+        }
+        newNum /= den;
+        
+        System.out.println(newNum);
+        
+        ArrayList<ArrayList<Float>> HiddenMatrix = new ArrayList<>();
+        ArrayList<Float> one = new ArrayList<>();
+        for (String num : Arrays.asList("0.5 0.7 0.2 0.6 0.1".split(" "))) {
+            
+            one.add(Float.parseFloat(num));
+            
+        }
+        HiddenMatrix.add(one);
+        
+        one = new ArrayList<>();
+        for (String num : Arrays.asList("0.5 0.7 0.2 0.6 0.1".split(" "))) {
+            
+            one.add(Float.parseFloat(num));
+            
+        }
+        HiddenMatrix.add(one);
+        
+        float[][] datArr2 = {{2,8},{2,5},{6,9},{7,5},{5,2}};
+        ArrayList<float[]> datList2 = new ArrayList<>(Arrays.asList(datArr2));
+        
+        ArrayList<Float> ans = new ArrayList<>();
+        for (int ii = 0; ii<2; ii++) {
+            float coord = 0;
+            float den2 = 0;
+            for (int jj = 0; jj<datList2.size(); jj++) {
+                float[] curP = datList2.get(jj);
+                coord += curP[ii] * HiddenMatrix.get(ii).get(jj);
+                den2 += HiddenMatrix.get(ii).get(jj);
+            }
+            coord /= den2;
+            ans.add(coord);
+        }
+        
+        System.out.println(ans);
+        
+    }
 }

@@ -27,4 +27,5 @@ public class Cluster {
         
         return dist;
     }
+    
 }

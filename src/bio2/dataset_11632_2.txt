@@ -1,0 +1,12 @@
+Input:
+0.369
+--------
+A	B	C	D	E
+--------
+C-CBDD-AC
+BDAA-DDBD
+D--BDDCBB
+BDADEDCD-
+BB--DDCBA
+-DAEADCBD
+ADA-DDC-A

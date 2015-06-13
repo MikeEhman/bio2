@@ -1,6 +1,7 @@
 package bio2;
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Scanner;
 
@@ -11,8 +12,8 @@ public class Parser {
         Scanner reader = new Scanner(file);
         while (reader.hasNextLine()) {
             String line = reader.nextLine();
-            if(line.equals("Output")) break;
-            if(!line.equals("Input")) list.add(line);
+            if(line.equals("Output:")) break;
+            if(!line.equals("Input:")) list.add(line);
         }
 
         return list;
@@ -67,4 +68,49 @@ public class Parser {
         }
         return Data;
     }
+    
+    public static HashMap<String,HashMap<String,Double>> ParseListIntoStringDoubleMatrix(ArrayList<String> list) {
+        HashMap<String,HashMap<String,Double>> Mat = new HashMap<>();
+
+        // top row consists of x states
+        String topRow = list.get(0);
+        // separated by: tabs
+        ArrayList<String> topRowList = new ArrayList<String>(Arrays.asList(topRow.split("\t")));
+        topRowList.remove(0); // usually there's a blank at first column
+        
+        // first column consists of y alphabets
+        ArrayList<String> firColList = new ArrayList<String>();
+        for (int i=1; i<list.size(); i++) {
+            String curRow = list.get(i);
+            firColList.add(""+curRow.charAt(0));
+        }
+       
+        for (String xs : firColList) {
+            Mat.put(xs, new HashMap<String,Double>());
+        }
+        
+        // look through all entries and put numbers at appropriate positions
+        for (int i=1; i<list.size(); i++) {
+            String row = list.get(i);
+            int xIndex = i-1;
+            ArrayList<String> splitRowList = new ArrayList<String> (Arrays.asList(row.split("\t")));
+            splitRowList.remove(0);
+            for (int yIndex=0; yIndex<splitRowList.size(); yIndex++) {
+                HashMap<String,Double> subMap = new HashMap<>();
+                
+                String xStr = firColList.get(xIndex);
+                String yStr = topRowList.get(yIndex);
+                
+                // read number
+                double num = Double.parseDouble(splitRowList.get(yIndex));
+
+                // put number in submap
+                Mat.get(xStr).put(yStr, num);
+            }
+        }
+        
+        return Mat;
+    
+    }
+    
 }

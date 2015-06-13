@@ -1,0 +1,12 @@
+Input:
+0.354 0.01
+--------
+A B C D E
+--------
+CDA
+ED-
+BAA
+--A
+CDA
+CDA
+CD-

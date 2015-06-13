@@ -49,9 +49,12 @@ public class Edge implements Comparable<Edge>, Serializable{
     
     @Override public String toString(){
         String name = "";
-        name += nodes.get(0).toString() + "<->" + nodes.get(1).toString()+":"+this.weight;
-        
-        
+        if (!directed){
+            name += nodes.get(0).toString() + "<->" + nodes.get(1).toString()+":"+this.weight;
+        }
+        if (directed) {
+            name += src.toString() + "->" + dst.toString();
+        }
         
         return name;
         

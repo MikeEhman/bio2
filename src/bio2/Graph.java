@@ -17,6 +17,7 @@ public class Graph implements Serializable{
     public int EdgeIndex = 0;
     
     public HashMap<Integer, Node> numNodeMap = new HashMap<>();
+    public HashMap<String, Node> strNodeMap = new HashMap<>();
     
     public Graph() {
         this.directed = false;
@@ -35,6 +36,11 @@ public class Graph implements Serializable{
     public void node_set_numlabel(Node n, int i) {
             n.numlabel = i;
             this.numNodeMap.put(i,n);
+    }
+    
+    public void set_strlabel(Node n, String str) {
+            n.label = str;
+            this.strNodeMap.put(str,n);
     }
     
     public Edge MakeNewEdge(){
@@ -132,11 +138,14 @@ public class Graph implements Serializable{
     }
     
     public Edge getEdge (Node n, Node m) {
-        for(int i=0; i<n.edges.size(); i++){
-            Edge e = n.edges.get(i);
+        for(int i=0; i<n.e_outs.size(); i++){
+            Edge e = n.e_outs.get(i);
             if (e.nodes.contains(m)){
                 return e;
-            } 
+            }
+            if (e.src.equals(n) && e.dst.equals(m)) {
+                return e;
+            }
         }
         return null;
     }
